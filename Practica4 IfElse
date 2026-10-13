@@ -1,0 +1,65 @@
+using System;
+
+namespace HelloWorld;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //1
+        int edad;
+        Console.Write("Ingrese su edad: ");
+        edad = int.Parse(Console.ReadLine());
+        if (edad >= 18) {
+            Console.WriteLine("Eres mayor de edad");
+        }
+        //2
+        decimal total;
+        Console.Write("Ingrese total de compra ");
+        total = decimal.Parse(Console.ReadLine());
+        if (total > 1000) {
+            Console.WriteLine("total con descuento : " + (total - (total / 10)));
+            Console.WriteLine("Gracias por su compra");
+        }
+        else {Console.WriteLine("Gracias por su compra");
+        }
+        //3
+        int numeroEntero;
+       Console.Write("Ingrese un numero entero: ");
+       numeroEntero = int.Parse(Console.ReadLine());
+       if (numeroEntero < 0) {
+           Console.WriteLine("El numero es negativo: ");
+           Console.WriteLine("Valor absoluto:" + Math.Abs(numeroEntero));
+       }
+       //4
+       int numero;
+       Console.Write("Ingrese un numero entero: ");
+       numero = int.Parse(Console.ReadLine());
+       if (numero % 2 == 0) {
+           Console.WriteLine("El numero es par");
+       }
+       else {
+           Console.WriteLine("El numero es impar");
+       }
+       //5
+       float calificacion;
+       Console.Write("Ingrese su calificacion: ");
+       calificacion = float.Parse(Console.ReadLine());
+       if (calificacion >= 6) {
+           Console.WriteLine("Aprobado");
+       }
+       else {
+            Console.WriteLine("Reprobado");
+        }
+       //6
+       string contrasena = "upem2026";
+       Console.Write("Ingrese su contrasena: ");
+       string usuariocontra = (Console.ReadLine());
+       if (usuariocontra == contrasena) {
+           Console.WriteLine("Acceso concedido");
+       }
+       else {
+           Console.WriteLine("Acceso denegado");
+       }
+    }
+}
