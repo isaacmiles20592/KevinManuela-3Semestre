@@ -36,8 +36,23 @@ class Program
             int vidas = 6;
             string letrasUsadas = "";
             //repetir intentos
-            while (vidas > 0 && QuedanLetras(progreso))
+            while (vidas > 0)
             {
+                bool quedanLetras = false;
+                for (int i = 0; i < progreso.Length; i++)
+                {
+                    if (progreso[i] == '_')
+                    {
+                        quedanLetras = true;
+                        break;
+                    }
+                }
+
+                if (!quedanLetras)
+                {
+                    break;
+                }
+
                 Console.WriteLine("Palabra: " + string.Join(" ", progreso));
                 Console.WriteLine("Vidas restantes: " + vidas);
 
@@ -88,10 +103,20 @@ class Program
                     Console.WriteLine();
                 }
             }
-            
+
             Console.WriteLine("Palabra: " + string.Join(" ", progreso));
 
-            if (!QuedanLetras(progreso))
+            bool quedanLetrasFinal = false;
+            for (int i = 0; i < progreso.Length; i++)
+            {
+                if (progreso[i] == '_')
+                {
+                    quedanLetrasFinal = true;
+                    break;
+                }
+            }
+
+            if (!quedanLetrasFinal)
             {
                 Console.WriteLine("Palabra adivinada");
             }
@@ -112,18 +137,5 @@ class Program
                 salir = true;
             }
         }
-    }
-
-    static bool QuedanLetras(char[] progreso)
-    {
-        for (int i = 0; i < progreso.Length; i++)
-        {
-            if (progreso[i] == '_')
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
